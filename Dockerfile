@@ -36,6 +36,5 @@ RUN /usr/sbin/httpd
 ADD httpd.sh /httpd.sh
 RUN chmod 755 /httpd.sh && chmod +x /httpd.sh
 
-
 EXPOSE 80
 CMD ["/httpd.sh"]
