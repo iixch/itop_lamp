@@ -22,8 +22,7 @@ RUN yum install  -y \
     &>/dev/null
 
 RUN yum install -y \
-    gcc httpd  graphviz \
-    net-tools iproute \
+    gcc httpd  graphviz iproute \
     &>/dev/null
 
 
@@ -34,7 +33,7 @@ RUN sed -i "s/#ServerName www.example.com:80/ServerName localhost:80/g"  /etc/ht
 RUN /usr/sbin/httpd 
 
 ADD httpd.sh /httpd.sh
-RUN chmod 755 /httpd.sh && chmod +x /httpd.sh
+RUN chmod +x /httpd.sh
 
 EXPOSE 80
 CMD ["/httpd.sh"]
